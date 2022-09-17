@@ -41,7 +41,14 @@
   (if (= n 1)
     (next-gen-comb combinations symbols)
     (my-loop (next-gen-comb combinations symbols) symbols (dec n))))
+
+
+(defn my-loop [combinations symbols n]         ;данная функция нужна нам вместо цикла чтобы проделать шаг n раз и довести длину комбинация до n
+  (if (= n 0)
+    combinations
+    (my-loop (next-gen-comb combinations symbols) symbols (dec n))))
 ;///////////////////////////////////////////////////////////////сделать чтобы для n=0 и без новых условий
+
 (defn func [symbols n]                                      ;требуемая к реализации функция
   (if (not= n 0)                                            ;condition
     (my-loop (list(list)) symbols n)                                   ;true

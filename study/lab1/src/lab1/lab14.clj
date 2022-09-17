@@ -15,14 +15,31 @@
   (letfn [(add-symbol-map [comb] (add-symbol comb symbols))]
     (mapcat add-symbol-map combinations)
     ))                  ;переделано для map ввел функцию которая с помощью map будет без рекурсии для всех комбинаций работать
-;///////////////////////////////////////////mapcat самому
+
+(defn next-gen-comb [combinations symbols]  ;использует функцию add-symbol просто для всех слов а не для одного и выдает список новых комбинаций
+  (letfn [(add-symbol-map [comb] (add-symbol comb symbols))]
+    (apply concat (map add-symbol-map combinations))        ;замена mapcat
+    ))
+
+(defn my-mapcat [f coll]
+  (letfn [(func [acc x] (concat acc (f x)))]
+    (reduce func nil coll)))
+
+(defn next-gen-comb [combinations symbols]  ;использует функцию add-symbol просто для всех слов а не для одного и выдает список новых комбинаций
+  (letfn [(add-symbol-map [comb] (add-symbol comb symbols))]
+    (my-mapcat add-symbol-map combinations)        ;замена mapcat
+    ))
+
 (defn add-symbol [combination symbols]             ; эта функция дописывает букву в начало слова и возвращает список слов например если подали (list  "d") (list "a") ;=> (("a" "d") ("b" "d") ("c" "d"))
+;///////////////////////////////////////////mapcat самому
   (letfn [(fltr [symb] (not= (first combination) symb))]
     (letfn [(add-map [filtred-symbs] (cons filtred-symbs combination))]
       (map add-map (filter fltr symbols)))
     )                                                       ;переделано на map
   )
-;///////////////////////////////////////////iterate вместо чего-то
+
+(my-mapcat reverse (list (list 1 2 3) (list 4 5 6)))     ;=> (2 3 4 5 6 7)
+
 (func (list "a" "b" "c" "d") 3)
 ;//////////////////////////////////////////////////////////////////////////////////////
 ;все, дальше просто мои записи проверочные, когда прогу писал
@@ -38,6 +55,7 @@
 
 (mapcat  (list 1 2 3))
 (map reverse (list (list 1 2 3) (list 4 5 6)))              ;=> ((3 2 1) (6 5 4))
+(apply concat (map reverse (list (list 1 2 3) (list 4 5 6)))) ;=> (3 2 1 6 5 4)
 (mapcat reverse (list (list 1 2 3) (list 4 5 6)))           ;=> (3 2 1 6 5 4)
 (map add-symbol combinations symbols)
 (map  + (list 1 2 3) (1))
