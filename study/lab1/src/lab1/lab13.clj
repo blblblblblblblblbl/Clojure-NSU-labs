@@ -16,12 +16,22 @@
 
 (my-map (fn [x] (+ 3 x)) '(1 2 3))
 (map (fn [x] (+ 3 x)) '(1 2 3))
-
+;///////////////////////////////////////самому reduce написать и вместо concat использовать conjoin
 
 ; идея та же только еще включаем с условием
 (defn my-filter [f coll]
   (letfn [(func [acc x] (concat acc (if (f x) (list x))))]
     (reduce func nil coll)))
+
+(defn my-reduce [f acc coll]
+  (if (empty? coll)
+    acc
+    (my-reduce f (first coll) (rest coll)) ))
+;/////////////////////////////////////////////////////conj к вектору в конец добавляет
+(empty? (rest (list 1)))
+(+ nil 1)
+
+(my-reduce + 0 (list 1))
 
 (my-filter even? (list 1 2 3 4 5 6 ))
 (filter even? (list 1 2 3 4 5 6 ))
@@ -31,3 +41,4 @@
 
 (my-filter pos? (list -1 5 42 0 -100 3))
 (filter pos? (list -1 5 42 0 -100 3))
+;

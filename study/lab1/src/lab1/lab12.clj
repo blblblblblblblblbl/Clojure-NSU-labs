@@ -20,7 +20,7 @@
       (recur (rest combinations-loop) (concat new-combinations-loop (add-symbol (first combinations-loop) symbols))) ;переделано на loop  ;false
       ))
     )
-
+;/////////////////////////////////////////////////////////////////без loop только fn использовать
 
 (defn add-symbol [combination symbols]             ; эта функция дописывает букву в начало слова и возвращает список слов например если подали (list  "d") (list "a") ;=> (("a" "d") ("b" "d") ("c" "d"))
   (loop [combination-loop combination symbols-loop symbols combinations-loop (list)] ; вводим loop который становится целью recur вводим его и переменные новые
