@@ -14,7 +14,7 @@
 (defn next-gen-comb [combinations symbols]  ;использует функцию add-symbol просто для всех слов а не для одного и выдает список новых комбинаций
   (letfn [(add-symbol-map [comb] (add-symbol comb symbols))]
     (mapcat add-symbol-map combinations)
-    ))                  ;переделано для map ввел функцию которая с помощью map будет без рекурсии для всех комбинаций работать
+    ))                  ;переделано для mapcat ввел функцию которая с помощью map будет без рекурсии для всех комбинаций работать
 
 (defn next-gen-comb [combinations symbols]  ;использует функцию add-symbol просто для всех слов а не для одного и выдает список новых комбинаций
   (letfn [(add-symbol-map [comb] (add-symbol comb symbols))]
