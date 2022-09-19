@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="3e872c5c-f313-4fba-88a2-f747cd854250" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Clojure Namespace" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2EkBwTrbVpdXtxo6iTp45BuM2TH" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;cursive.last.file.extension.C\\:/Users/stitc/Documents/GitHub/clojure/study/lab1/src&quot;: &quot;clj&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/stitc/Desktop/example/clojure_tasks-main/task1&quot;
+  }
+}</component>
+  <component name="ReplState" timestamp="1663411880522">{:repl-history {:ide [], :local [{:command &quot;(+ 1 1)&quot;, :offset 7, :ns &quot;lab1.core&quot;} {:command &quot;(defn func [symbols count] (println symbols))&quot;, :offset 45, :ns &quot;lab1.core&quot;} {:command &quot;(func (list a b c) 5)&quot;, :offset 21, :ns &quot;lab1.core&quot;} {:command &quot;(func (list 'a' 'b' 'c') 5)&quot;, :offset 27, :ns &quot;lab1.core&quot;} {:command &quot;\&quot;a\&quot;&quot;, :offset 3, :ns &quot;lab1.core&quot;} {:command &quot;(list)&quot;, :offset 6, :ns &quot;lab1.core&quot;} {:command &quot;(defn func [symbols count]\n  (if (not= n 0)                                            ;condition\n    (f1 (list) symbols n)                                   ;true\n    ()                                                      ;false\n    ))&quot;, :offset 237, :ns &quot;lab1.core&quot;} {:command &quot;(defn add-symbol [combination symbols]             ;добавляет новый символ к комбинации\n  (if (empty? symbols)                                      ;condition\n    ()                                                      ;true\n    (if (empty? combination)                                ;false and new cond\n      (cons (list (first symbols) combination) (add-symbol combination (rest symbols))) ;true                                            ;true\n      (if (not= (first combination) (first symbols))        ;false and new cond\n        (cons (cons (first symbols) combination) (add-symbol combination (rest symbols)))                                                  ;true\n        (add-symbol combination (rest symbols))                                       ;false\n        ))                                                      \n    )\n  )&quot;, :offset 840, :ns &quot;lab1.core&quot;} {:command &quot;(defn f2 [combinations symbols]  ;генерирует комбинации символов\n  (if (empty? (rest combinations))                          ;condition\n    (add-symbol (first combinations) symbols)               ;true\n    (concat (add-symbol (first symbols) symbols) (f2 (rest combinations) symbols) )                       ;false\n    ))&quot;, :offset 321, :ns &quot;lab1.core&quot;} {:command &quot;(defn f1 [combinations symbols n]\n  (if (= n 1) (f2 combinations symbols) (f1 (f2 combinations symbols)  symbols (dec n) ) ))&quot;, :offset 125, :ns &quot;lab1.core&quot;} {:command &quot;(defn func [symbols n]\n  (if (not= n 0)                                            ;condition\n    (f1 (list) symbols n)                                   ;true\n    ()                                                      ;false\n    ))&quot;, :offset 233, :ns &quot;lab1.core&quot;} {:command &quot;(func (list \&quot;a\&quot; \&quot;b\&quot; \&quot;c\&quot;) 5)&quot;, :offset 27, :ns &quot;lab1.core&quot;} {:command &quot;(defn func [symbols n]\n  (if (not= n 0)                                            ;condition\n    (f1 () symbols n)                                   ;true\n    ()                                                      ;false\n    ))&quot;, :offset 229, :ns &quot;lab1.core&quot;} {:command &quot;(defn add-symbol [combination symbols]             ; эта функция дописывает букву в начало слова и возвращает список слов например если подали (list  \&quot;d\&quot;) (list \&quot;a\&quot;) ;=&gt; ((\&quot;a\&quot; \&quot;d\&quot;) (\&quot;b\&quot; \&quot;d\&quot;) (\&quot;c\&quot; \&quot;d\&quot;))\n  (if (empty? symbols)                                      ;condition\n    ()                                                      ;true\n    (if (not= (first combination) (first symbols))        ;false and new cond\n      (cons (cons (first symbols) combination) (add-symbol combination (rest symbols)))      ;true\n      (add-symbol combination (rest symbols))                                       ;false\n      )\n    )\n  )&quot;, :offset 624, :ns &quot;lab1.core&quot;} {:command &quot;(defn next-gen-comb [combinations symbols]  ;использует функцию add-symbol просто для всех слов а не для одного и выдает список новых комбинаций\n  (if (empty? combinations)                          ;condition\n    ()               ;true\n    (concat (add-symbol (first symbols) symbols) (next-gen-comb (rest combinations) symbols))   ;false\n    ))&quot;, :offset 345, :ns &quot;lab1.core&quot;} {:command &quot;(defn loop [combinations symbols n]         ;данная функция нужна нам вместо цикла чтобы проделать шаг n раз и довести длину комбинация до n\n  (if (= n 1)\n    (next-gen-comb combinations symbols)\n    (loop (next-gen-comb combinations symbols) symbols (dec n))))&quot;, :offset 261, :ns &quot;lab1.core&quot;} {:command &quot;(defn func [symbols n]                                      ;требуемая к реализации функция\n  (if (not= n 0)                                            ;condition\n    (loop () symbols n)                                   ;true\n    ()                                                      ;false\n    ))&quot;, :offset 300, :ns &quot;lab1.core&quot;} {:command &quot;(defn my-loop [combinations symbols n]         ;данная функция нужна нам вместо цикла чтобы проделать шаг n раз и довести длину комбинация до n\n  (if (= n 1)\n    (next-gen-comb combinations symbols)\n    (my-loop (next-gen-comb combinations symbols) symbols (dec n))))&quot;, :offset 267, :ns &quot;lab1.core&quot;} {:command &quot;(defn func [symbols n]                                      ;требуемая к реализации функция\n  (if (not= n 0)                                            ;condition\n    (my-loop () symbols n)                                   ;true\n    ()                                                      ;false\n    ))&quot;, :offset 303, :ns &quot;lab1.core&quot;} {:command &quot;(defn func [symbols n]                                      ;требуемая к реализации функция\n  (if (not= n 0)                                            ;condition\n    (my-loop (list(list)) symbols n)                                   ;true\n    ()                                                      ;false\n    ))&quot;, :offset 313, :ns &quot;lab1.core&quot;} {:command &quot;(defn next-gen-comb [combinations symbols]  ;использует функцию add-symbol просто для всех слов а не для одного и выдает список новых комбинаций\n  (if (empty? combinations)                          ;condition\n    ()               ;true\n    (concat (add-symbol (first combinations) symbols) (next-gen-comb (rest combinations) symbols))   ;false\n    ))&quot;, :offset 350, :ns &quot;lab1.core&quot;} {:command &quot;(func (list \&quot;a\&quot; \&quot;b\&quot; \&quot;c\&quot;) 1)&quot;, :offset 27, :ns &quot;lab1.core&quot;} {:command &quot;(func (list \&quot;a\&quot; \&quot;b\&quot; \&quot;c\&quot;) 2)&quot;, :offset 27, :ns &quot;lab1.core&quot;} {:command &quot;(func (list \&quot;a\&quot; \&quot;b\&quot; \&quot;c\&quot; \&quot;d\&quot;) 2)&quot;, :offset 31, :ns &quot;lab1.core&quot;} {:command &quot;(func (list \&quot;a\&quot; \&quot;b\&quot; \&quot;c\&quot; \&quot;d\&quot;) 3)&quot;, :offset 31, :ns &quot;lab1.core&quot;} {:command &quot;(if (empty? `(())) true false)&quot;, :offset 30, :ns &quot;lab1.core&quot;} {:command &quot;(if (empty? (list ())) true false)&quot;, :offset 34, :ns &quot;lab1.core&quot;} {:command &quot;(if (empty? ()) true false)&quot;, :offset 27, :ns &quot;lab1.core&quot;} {:command &quot;(cons (cons (first (list \&quot;a\&quot;)) (list \&quot;d\&quot;)) (cons (first (list \&quot;a\&quot;)) (list \&quot;d\&quot;)) )&quot;, :offset 81, :ns &quot;lab1.core&quot;} {:command &quot;(cons (cons (first (list \&quot;a\&quot;)) (list \&quot;d\&quot;)) (cons (cons (first (list \&quot;a\&quot;)) (list \&quot;d\&quot;)) ()))&quot;, :offset 90, :ns &quot;lab1.core&quot;} {:command &quot;(println \&quot;ds\&quot;)&quot;, :offset 14, :ns &quot;lab1.lab1.3&quot;} {:command &quot;(println \&quot;gsdf\&quot;)&quot;, :offset 16, :ns &quot;lab1.lab13&quot;} {:command &quot;(defn my-map [f coll]\n   (letfn [(func [x] (println x))] (reduce func coll)))&quot;, :offset 77, :ns &quot;lab1.lab13&quot;} {:command &quot;(defn f [x]\n  (println x))&quot;, :offset 26, :ns &quot;lab1.lab13&quot;} {:command &quot;(reduce f '(1 2 3))&quot;, :offset 19, :ns &quot;lab1.lab13&quot;} {:command &quot;(defn f [acc x]\n  (println x))&quot;, :offset 30, :ns &quot;lab1.lab13&quot;} {:command &quot;(letfn [(func [x] (println x))])&quot;, :offset 32, :ns &quot;lab1.lab13&quot;} {:command &quot;(reduce f nil '(1 2 3))&quot;, :offset 23, :ns &quot;lab1.lab13&quot;} {:command &quot;(defn my-map [f coll]\n   (letfn [(func [acc x] (println x))] (reduce func nil coll)))&quot;, :offset 85, :ns &quot;lab1.lab13&quot;} {:command &quot;(defn my-map [f coll]\n   (letfn [(func [acc x] (list x))] (reduce func nil coll)))&quot;, :offset 82, :ns &quot;lab1.lab13&quot;} {:command &quot;(my-map f '(1 2 3))&quot;, :offset 19, :ns &quot;lab1.lab13&quot;} {:command &quot;(defn my-map [f coll]\n   (letfn [(func [acc x] (+ acc x))] \n     (reduce func nil coll)))&quot;, :offset 89, :ns &quot;lab1.lab13&quot;} {:command &quot;(defn my-map [f coll]\n   (letfn [(func [acc x] (+ acc x))] \n     (reduce func 0 coll)))&quot;, :offset 87, :ns &quot;lab1.lab13&quot;} {:command &quot;(defn my-map [f coll]\n   (letfn [(func [acc x] (concat acc x))] \n     (reduce func 0 coll)))&quot;, :offset 92, :ns &quot;lab1.lab13&quot;} {:command &quot;(defn my-map [f coll]\n   (letfn [(func [acc x] (concat acc x))] \n     (reduce func nil coll)))&quot;, :offset 94, :ns &quot;lab1.lab13&quot;} {:command &quot;(defn my-map [f coll]\n   (letfn [(func [acc x] (concat acc x))] \n     (reduce func (list) coll)))&quot;, :offset 97, :ns &quot;lab1.lab13&quot;} {:command &quot;(defn my-map [f coll]\n   (letfn [(func [acc x] (concat acc x))] \n     (reduce func () coll)))&quot;, :offset 93, :ns &quot;lab1.lab13&quot;} {:command &quot;(defn my-map [f coll]\n   (letfn [(func [acc x] (cons acc x))] \n     (reduce func () coll)))&quot;, :offset 91, :ns &quot;lab1.lab13&quot;} {:command &quot;(defn my-map [f coll]\n   (letfn [(func [acc x] (cons acc x))]\n     (reduce func (list 1) coll)))&quot;, :offset 96, :ns &quot;lab1.lab13&quot;} {:command &quot;(defn my-map [f coll]\n   (letfn [(func [acc x] (cons acc x))]\n     (reduce func (list 1) (list coll))))&quot;, :offset 103, :ns &quot;lab1.lab13&quot;} {:command &quot;(defn my-map [f coll]\n   (letfn [(func [acc x] (cons acc x))]\n     (reduce func () (list coll))))&quot;, :offset 97, :ns &quot;lab1.lab13&quot;} {:command &quot;(defn my-map [f coll]\n   (letfn [(func [acc x] (cons acc (list x)))]\n     (reduce func () coll)))&quot;, :offset 97, :ns &quot;lab1.lab13&quot;} {:command &quot;(defn my-map [f coll]\n   (letfn [(func [acc x] (concat acc (list x)))]\n     (reduce func () coll)))&quot;, :offset 99, :ns &quot;lab1.lab13&quot;} {:command &quot;(defn my-map [f coll]\n   (letfn [(func [acc x] (concat acc (list x)))]\n     (reduce func nil coll)))&quot;, :offset 100, :ns &quot;lab1.lab13&quot;} {:command &quot;(my-map f '(1 2))&quot;, :offset 17, :ns &quot;lab1.lab13&quot;} {:command &quot;(my-map inc '(1 2))&quot;, :offset 19, :ns &quot;lab1.lab13&quot;} {:command &quot;(map f '(1 2 3))&quot;, :offset 16, :ns &quot;lab1.lab13&quot;} {:command &quot;(my-map inc '(1 2 3 4 5 6))&quot;, :offset 27, :ns &quot;lab1.lab13&quot;} {:command &quot;(defn my-map [f coll]\n   (letfn [(func [acc x] (concat acc (list (f x))))]\n     (reduce func nil coll)))&quot;, :offset 104, :ns &quot;lab1.lab13&quot;}], :remote []}}</component>
+  <component name="RunManager">
+    <configuration default="true" type="Babashka" factoryName="BabashkaLocalRepl" activateToolWindowBeforeRun="false">
+      <setting name="displayName" value="" />
+      <setting name="bbPath" value="" />
+      <setting name="parameters" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <setting name="workingDir" value="" />
+      <setting name="focusEditor" value="false" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="REPL for lab1" type="ClojureREPL" factoryName="Local" activateToolWindowBeforeRun="false" temporary="true">
+      <module name="lab1" />
+      <setting name="displayName" value="REPL for lab1" />
+      <setting name="replType" value="NREPL" />
+      <setting name="execution" value="LEININGEN" />
+      <setting name="jvmArgs" value="" />
+      <setting name="parameters" value="" />
+      <setting name="workingDir" value="$PROJECT_DIR$" />
+      <setting name="profiles" value="" />
+      <setting name="aliases" value="" />
+      <setting name="fixLineNumbers" value="false" />
+      <setting name="focusEditor" value="false" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="ClojureREPL" factoryName="Local" activateToolWindowBeforeRun="false">
+      <setting name="displayName" value="" />
+      <setting name="replType" value="NREPL" />
+      <setting name="execution" value="LEININGEN" />
+      <setting name="jvmArgs" value="" />
+      <setting name="parameters" value="" />
+      <setting name="workingDir" value="" />
+      <setting name="profiles" value="" />
+      <setting name="aliases" value="" />
+      <setting name="fixLineNumbers" value="false" />
+      <setting name="focusEditor" value="false" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="ClojureREPL" factoryName="Remote" activateToolWindowBeforeRun="false">
+      <setting name="displayName" value="" />
+      <setting name="host" value="" />
+      <setting name="port" value="0" />
+      <setting name="replType" value="SOCKET" />
+      <setting name="configType" value="SPECIFY" />
+      <setting name="replPortFileType" value="STANDARD" />
+      <setting name="customPortFile" value="" />
+      <setting name="fixLineNumbers" value="false" />
+      <setting name="focusEditor" value="false" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Clojure REPL.REPL for lab1" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3e872c5c-f313-4fba-88a2-f747cd854250" name="Changes" comment="" />
+      <created>1663129942496</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1663129942496</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+</project>
