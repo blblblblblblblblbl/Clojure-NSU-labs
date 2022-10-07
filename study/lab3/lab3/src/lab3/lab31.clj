@@ -1,7 +1,12 @@
 (ns lab3.lab31)
+
 (defn heavy-even? [x]
   (Thread/sleep 100)
   (even? x))
+;можно вытащить количество потоков через функции из java
+;сделать перегрузку на parallel-filter2, чтобы если два параметра передаем то программа сама
+;берет количество потоков а если 3 то мы сообщаем об их количестве
+;сделать чтобы передевать количество потоков
 (defn make-parts-list [coll n]
   (if (empty? coll)
     ()
@@ -14,9 +19,10 @@
       (map #(future (doall (filter func %))))
       (doall)
       (map deref)
-      (doall)
+      ;(doall)
       (connect-parts)
       ))
+
 (defn -main []
   (time (doall (filter heavy-even? (range 100))))
   ;"Elapsed time: 11032.4475 msecs"
