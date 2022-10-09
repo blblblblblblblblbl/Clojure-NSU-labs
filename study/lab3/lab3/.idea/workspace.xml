@@ -2,13 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0c575f36-0b7f-4265-823d-30fb384b0456" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/lab3/lab32draft.clj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/lab3.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lab3/lab32.clj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/CHANGELOG.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/lab3/lab31.clj" beforeDir="false" afterPath="$PROJECT_DIR$/src/lab3/lab31.clj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lab3/lab31draft.clj" beforeDir="false" afterPath="$PROJECT_DIR$/src/lab3/lab31draft.clj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lab3/lab32draft.clj" beforeDir="false" afterPath="$PROJECT_DIR$/src/lab3/lab32draft.clj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,14 +34,14 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "cursive.last.file.extension.C\\:/Users/stitc/Documents/GitHub/clojure/study/lab3/lab3/src": "clj"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;cursive.last.file.extension.C\\:/Users/stitc/Documents/GitHub/clojure/study/lab3/lab3/src&quot;: &quot;clj&quot;
   }
-}]]></component>
-  <component name="ReplState" timestamp="1665143781991">{:repl-history {:ide [], :local [{:command &quot;(take 10 (iterate inc 0))&quot;, :offset 25, :ns &quot;lab3.lab32draft&quot;}], :remote []}}</component>
+}</component>
+  <component name="ReplState" timestamp="1665321361695">{:repl-history {:ide [], :local [{:command &quot;(take 10 (iterate inc 0))&quot;, :offset 25, :ns &quot;lab3.lab32draft&quot;}], :remote []}}</component>
   <component name="RunManager" selected="Clojure Application.lab3.lab31">
     <configuration default="true" type="Babashka" factoryName="BabashkaLocalRepl" activateToolWindowBeforeRun="false">
       <setting name="displayName" value="" />
@@ -107,9 +105,22 @@
       <setting name="workDir" value="$PROJECT_DIR$" />
       <method v="2" />
     </configuration>
+    <configuration name="lab3.lab32" type="ClojureScriptRunConfiguration" factoryName="Clojure Script" temporary="true">
+      <module name="lab3" />
+      <setting name="path" value="" />
+      <setting name="namespace" value="lab3.lab32" />
+      <setting name="execution" value="INTELLIJ" />
+      <setting name="profiles" value="" />
+      <setting name="aliases" value="" />
+      <setting name="vmparams" value="" />
+      <setting name="params" value="" />
+      <setting name="workDir" value="$PROJECT_DIR$" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Clojure Application.lab3.lab31" />
+        <item itemvalue="Clojure Application.lab3.lab32" />
         <item itemvalue="Clojure REPL.REPL for lab3" />
       </list>
     </recent_temporary>

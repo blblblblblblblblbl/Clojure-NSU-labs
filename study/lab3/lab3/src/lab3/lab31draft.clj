@@ -126,3 +126,11 @@
 (defn -main []
   (make-parts-list (list) 1)
   )
+
+(defn parallel-filter-threads
+  ([func coll] (let [coll-size (count coll)
+                     cpu-cores (.. Runtime (getRuntime) (availableProcessors))]
+                 (if (== (rem coll-size cpu-cores) 0)
+                   (parallel-filter2 func coll (quot coll-size cpu-cores))
+                   (parallel-filter2 func coll (+ 1 (quot coll-size cpu-cores))))))
+  ([func coll n] (parallel-filter2 func coll (quot (count coll) n))))
