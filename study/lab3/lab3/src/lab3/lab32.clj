@@ -12,11 +12,10 @@
 (defn parallel-filter-chunk [func coll chunk-size batch-size]
   (->>(parts chunk-size coll )
       (parts batch-size)
-      (map (fn [batch]
+      (mapcat (fn [batch]
              (->> (map #(future (doall(filter func %))) batch)
                   (doall batch-size)
                   (map deref))))
-      (apply concat)
       (apply concat)
       ))
 
