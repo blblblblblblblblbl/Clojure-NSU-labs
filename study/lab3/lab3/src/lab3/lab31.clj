@@ -20,9 +20,9 @@
   (->>(make-parts-list coll n)
       (map #(future (doall (filter func %))))
       (doall)
-      (map deref)
+      (mapcat deref)
       ;(doall)
-      (connect-parts)
+      ;(apply concat)
       ))
 ;(.. ManagementFactory (getThreadMXBean) (getThreadCount))
 ;(Thread/activeCount)
@@ -43,6 +43,9 @@
   ([func coll  ] (parallel-filter-threads func coll  (.. Runtime (getRuntime) (availableProcessors)) ))
   ([func coll threads] (parallel-filter-threads func coll  threads )))
 
+
+(time (doall (parallel-filter heavy-even? (range 100))))
+(time (doall (filter heavy-even? (range 100))))
 (defn -main []
   (time (doall (filter heavy-even? (range 100))))
   ;"Elapsed time: 11032.4475 msecs"
